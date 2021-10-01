@@ -10,7 +10,7 @@ services:
 
 
     environment:
-      - BACKEND_IP=backendip.ansible.ga
+      - BACKEND_IP=3.235.235.149
     depends_on:
     - dotnet
 
