@@ -3,8 +3,8 @@ pipelines:
   default:
     - step:
         script:
-          - docker login -u vamsi798 -p Vamsi123@
-          - docker build -t vamsi798/reactjs:latest .
-          - docker push vamsi798/reactjs:latest
+          - docker login -u venuzs -p venu@1234
+          - docker build -t venuzs/reactjs:v1 .
+          - docker push venuzs/reactjs:v1
 options:
   docker: true
