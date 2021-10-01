@@ -1,30 +1,27 @@
 version: "3.7"
 services:
   frontend:
-    build:
-      context: /root/react-asp.net-mysql/frontend
-      dockerfile: Dockerfile
+     image: venuzs/frontend:v1
+    # build:
+    #   context: /root/react-asp.net-mysql/frontend
+    #   dockerfile: Dockerfile
     ports:
     - "3000:3000"
 
 
     environment:
       - BACKEND_IP=3.235.235.149
-#      - REACT_APP_API_URL=http://52.204.184.100:5000/api/
-#      - REACT_APP_PHOTOS_URL=http://52.204.184.100:5000/Photos/
     depends_on:
     - dotnet
 
   dotnet:
-    build:
-      context: /root/react-asp.net-mysql/backend/WebApplication1
-      dockerfile: Dockerfile
-#    image: rajmanohar/dotnet-backend:v3
-#    container_name: dotnet
+    # build:
+    #   context: /root/react-asp.net-mysql/backend/WebApplication1
+    #   dockerfile: Dockerfile
+   image: venuzs/backend:v1
+   container_name: dotnet
     ports:
     - "5000:80"
-#    environment:
-#      MYSQL_ROOT_PASSWORD: password
     depends_on:
     - mysql
 #    networks:
@@ -32,16 +29,8 @@ services:
 
 
   mysql:
-    # build:
-    #   context: venuzs/mysql:v2
-    #   dockerfile: Dockerfile
     image: venuzs/mysql:v2
     environment:
       MYSQL_ROOT_PASSWORD: password
     ports:
       - "3306:3306"
-#    networks:
-#      - sdnet
-#networks:
-#  sdnet:
-#    driver: "bridge
