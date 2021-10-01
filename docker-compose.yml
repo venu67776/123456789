@@ -2,7 +2,7 @@ version: "3.7"
 services:
   frontend:
     build:
-      context: /root/reactjs-netcore-mysql/ui/my-app
+      context: /root/reactjs-asp.net-mysql/frontend
       dockerfile: Dockerfile
     ports:
     - "3000:3000"
@@ -17,7 +17,7 @@ services:
 
   dotnet:
     build:
-      context: /root/reactjs-netcore-mysql/api/WebApplication1/WebApplication1/
+      context: /root/reactjs-asp.net-mysql/backend/WebApplication1/
       dockerfile: Dockerfile
 #    image: rajmanohar/dotnet-backend:v3
 #    container_name: dotnet
