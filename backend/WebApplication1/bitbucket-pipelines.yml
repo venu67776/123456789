@@ -1,0 +1,10 @@
+image: mcr.microsoft.com/dotnet/core/sdk:3.1
+pipelines:
+  default:
+    - step:
+        script:
+          - docker login -u vamsi798 -p Vamsi123@
+          - docker build -t vamsi798/asp.net:$BITBUCKET_COMMIT .
+          - docker push venuzs/asp.net:$BITBUCKET_COMMIT
+options:
+  docker: true

@@ -1,0 +1,47 @@
+version: "3.7"
+services:
+  frontend:
+    build:
+      context: /root/reactjs-netcore-mysql/ui/my-app
+      dockerfile: Dockerfile
+    ports:
+    - "3000:3000"
+
+
+    environment:18.235.1.78
+      - BACKEND_IP=
+#      - REACT_APP_API_URL=http://52.204.184.100:5000/api/
+#      - REACT_APP_PHOTOS_URL=http://52.204.184.100:5000/Photos/
+    depends_on:
+    - dotnet
+
+  dotnet:
+    build:
+      context: /root/reactjs-netcore-mysql/api/WebApplication1/WebApplication1/
+      dockerfile: Dockerfile
+#    image: rajmanohar/dotnet-backend:v3
+#    container_name: dotnet
+    ports:
+    - "5000:80"
+#    environment:
+#      MYSQL_ROOT_PASSWORD: password
+    depends_on:
+    - mysql
+#    networks:
+#      - sdnet
+
+
+  mysql:
+    # build:
+    #   context: venuzs/mysql:v2
+    #   dockerfile: Dockerfile
+    image: venuzs/mysql:v2
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3306:3306"
+#    networks:
+#      - sdnet
+#networks:
+#  sdnet:
+#    driver: "bridge

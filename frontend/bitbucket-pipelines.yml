@@ -1,0 +1,10 @@
+image: node:latest
+pipelines:
+  default:
+    - step:
+        script:
+          - docker login -u vamsi798 -p Vamsi123@
+          - docker build -t vamsi798/reactjs:latest .
+          - docker push vamsi798/reactjs:latest
+options:
+  docker: true
