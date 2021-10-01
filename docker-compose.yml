@@ -9,7 +9,7 @@ services:
 
 
     environment:
-      - BACKEND_IP=18.235.1.78
+      - BACKEND_IP=3.235.235.149
 #      - REACT_APP_API_URL=http://52.204.184.100:5000/api/
 #      - REACT_APP_PHOTOS_URL=http://52.204.184.100:5000/Photos/
     depends_on:
