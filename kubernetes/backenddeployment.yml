@@ -1,24 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend-deployment
+  name: backend-deployment
 spec:
-  replicas: 2
   selector:
     matchLabels:
-      app: frontend
+      app: backend
   template:
     metadata:
       labels:
-        app: frontend
+        app: backend
     spec:
       containers:
-        - image: vamsi798/start:k8s
-          name: frontend
-          stdin: true
-          tty: true
+        - image: vamsi798/start:k3d
+          name: backend
           ports:
-            - containerPort: 3000
-          env:
-            - name: BACKEND_IP
-              value: "3.215.180.108"
+            - containerPort: 80
