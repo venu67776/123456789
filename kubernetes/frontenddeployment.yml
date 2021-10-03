@@ -13,7 +13,7 @@ spec:
         app: frontend
     spec:
       containers:
-        - image: venuzs/frontend:v2
+        - image: venuzs/frontend:v3
           name: frontend
           stdin: true
           tty: true

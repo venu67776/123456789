@@ -12,7 +12,7 @@ spec:
         app: backend
     spec:
       containers:
-        - image: venuzs/backend:v2
+        - image: venuzs/backend:v3
           name: backend
           ports:
-            - containerPort: 5000
+            - containerPort: 80
