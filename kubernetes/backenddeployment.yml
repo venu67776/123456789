@@ -15,4 +15,4 @@ spec:
         - image: venuzs/backend:v2
           name: backend
           ports:
-            - containerPort: 80
+            - containerPort: 5000
