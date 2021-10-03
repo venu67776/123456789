@@ -15,8 +15,10 @@ spec:
       containers:
       - name: frontend
         image: venuzs/frontend:v1
+        stdin: true
+        tty: true
         ports:
-        - containerPort: 3000
+          - containerPort: 3000
         env:
-            - name: BACKEND_IP
-              value: "3.235.131.96"
+           - name: BACKEND_IP
+             value: "3.235.131.96"
