@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   name: backend-deployment
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: backend
@@ -13,7 +12,7 @@ spec:
         app: backend
     spec:
       containers:
-      - name: frontend
-        image: venuzs/backend:v1
-        ports:
-        - containerPort: 80
+        - image: venuzs/backend:v1
+          name: backend
+          ports:
+            - containerPort: 80
