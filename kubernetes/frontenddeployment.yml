@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: frontend-deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: frontend
@@ -13,12 +13,10 @@ spec:
         app: frontend
     spec:
       containers:
-        - image: vamsi798/start:k8s
-          name: frontend
-          stdin: true
-          tty: true
-          ports:
-            - containerPort: 3000
-          env:
-            - name: BACKEND_IP
-              value: 3.235.131.96""
+      - name: frontend
+        image: venuzs/frontend:v1
+        ports:
+        - containerPort: 3000
+        env:
+        - name: BACKEND_IP
+          value: "54.159.32.238"
