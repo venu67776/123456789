@@ -13,7 +13,7 @@ spec:
         app: mysql
     spec:
       containers:
-      - name: myapp
+      - name: mysql
         image: venuzs/mysql:v2
         ports:
         - containerPort: 3306
